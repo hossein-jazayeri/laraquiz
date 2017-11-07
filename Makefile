@@ -30,4 +30,10 @@ down:
 tinker:
 	$(docker) php artisan tinker
 
-.PHONY: setup up down tinker artisan
+test:
+	./vendor/bin/phpunit -c phpunit.xml --colors tests/
+
+enter:
+	docker-compose run --rm $(c) bash
+
+.PHONY: setup up down tinker artisan test

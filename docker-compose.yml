@@ -5,6 +5,7 @@ services:
     build: docker/web
     volumes:
       - ./:/var/www
+      - /dev/log:/dev/log
     ports:
       - "80:80"
     networks:
@@ -14,6 +15,7 @@ services:
     build: docker/app
     volumes:
       - ./:/var/www
+      - /dev/log:/dev/log
     networks:
       - laraquiz
 
